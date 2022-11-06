@@ -25,7 +25,7 @@ pipeline{
         stage('Maven Build / creating Artifacts'){
             
             steps{
-                bat 'mvn verify -DskipUnitTests'
+                bat 'mvn clean install'
             }
         }
     }
