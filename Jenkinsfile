@@ -70,6 +70,15 @@ pipeline{
                 }
             }
         }
+        stage("Docker image build"){
+            steps{
+                script{
+                    bat 'docker image build -t $JOB_NAME:v1.$BUILD_ID .'
+                    bat 'docker image $JOB_NAME:v1.$BUILD_ID sbssunu/$JOB_NAME:v1.$BUILD_ID'
+                    bat 'docker image $JOB_NAME:v1.$BUILD_ID sbssunu/$JOB_NAME:latest'
+                }
+            }
+        }
     }
         
 }
