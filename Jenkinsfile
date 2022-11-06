@@ -22,6 +22,12 @@ pipeline{
                 bat 'mvn verify -DskipUnitTests'
             }
         }
+        stage('Maven Build / creating Artifacts'){
+            
+            steps{
+                bat 'mvn verify -DskipUnitTests'
+            }
+        }
     }
         
 }
